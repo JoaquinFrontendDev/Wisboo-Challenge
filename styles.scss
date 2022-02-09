@@ -1,0 +1,249 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	width: 100%;
+	max-width: 100vw;
+	height: 100%;
+	min-height: 100vh;
+	background-color: #ccc;
+	display: grid;
+	place-items: center;
+}
+
+.container {
+	position: relative;
+	width: 1280px;
+	height: 1062px;
+	background-color: #f7f7f9;
+}
+
+.header-container {
+	width: 100%;
+	padding: 82px 140px 36px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-title {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 22px;
+	color: #444c5e;
+}
+
+.header-export-btn {
+	background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+	border: 1px solid #d4d8e1;
+	border-radius: 3px;
+	font-weight: 600;
+	font-size: 13px;
+	text-transform: uppercase;
+	color: #697284;
+	padding: 9px 0;
+
+	span {
+		padding-right: 11px;
+	}
+}
+
+.icon-file_download---material {
+	width: 20px;
+	height: 18px;
+	color: #697284;
+	margin-right: 6px;
+	padding-left: 10px;
+}
+
+.header-register-btn {
+	background: #fd0087;
+	border-radius: 4px;
+	outline: none;
+	border: none;
+	font-weight: 600;
+	font-size: 13px;
+	margin-left: 13px;
+	text-transform: uppercase;
+	color: #ffffff;
+	padding: 9px 11px;
+}
+
+.header-underline {
+	position: absolute;
+	width: 999px;
+	height: 1px;
+	left: 141px;
+	top: 131px;
+	border: 1px solid #b3bac9;
+}
+
+.cards-container {
+	width: 100%;
+	padding: 22px 140px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.info-card {
+	background: #ffffff;
+	width: 240px;
+	height: 121px;
+	border: 1px solid #d4d8e1;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	padding: 20px 30px;
+}
+
+.card-title {
+	font-weight: 600;
+	font-size: 15px;
+	color: #697284;
+	margin-bottom: 13px;
+}
+
+.card-data {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	color: #222232;
+}
+
+.card-footer {
+	font-weight: 600;
+	font-size: 13px;
+	color: #9da5b7;
+}
+
+.main-container {
+	width: 100%;
+	height: 100%;
+	padding: 0 140px;
+}
+
+.data-box {
+	width: 100%;
+	background-color: #ffffff;
+	border: 1px solid #d4d8e1;
+	border-radius: 8px;
+}
+
+.filters-wrapper {
+	width: 100%;
+	display: flex;
+	gap: 13px;
+	padding: 23px 22px 33px;
+	justify-content: space-between;
+}
+
+.input-box {
+	display: flex;
+	position: relative;
+}
+
+.icon-Buscar {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	right: 11px;
+	top: calc(50% - 20px / 2 + 0.5px);
+}
+
+.search-data {
+	width: 274px;
+	height: 35px;
+	border: 1px solid #d4d8e1;
+	border-radius: 4px;
+	padding: 16px 8px 19px;
+
+	&::placeholder {
+		font-weight: 600;
+		font-size: 14px;
+		color: #d4d8e1;
+	}
+}
+
+.filter-select {
+	width: 160px;
+	border: 1px solid #d4d8e1;
+	border-radius: 4px;
+	font-weight: 600;
+	font-size: 14px;
+	color: #697284;
+	padding: 0 10px;
+}
+
+.data-wrapper {
+	width: 100%;
+	padding: 44px 20px 40.26px;
+
+	.data-item {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 18px;
+		border-bottom: 0.7px solid #d4d8e1;
+
+		.order-number {
+			margin-right: 34px;
+			font-weight: 600;
+			color: #04b2f3;
+			font-size: 15px;
+			text-decoration-line: underline;
+		}
+
+		.course-name {
+			margin-right: 35px;
+			font-weight: 400;
+			font-size: 15px;
+			color: #697284;
+		}
+
+		.buyer-name {
+			margin-right: 71px;
+			font-weight: 400;
+			font-size: 15px;
+			color: #697284;
+		}
+
+		.date {
+			margin-right: 38px;
+			font-weight: 400;
+			font-size: 15px;
+			color: #697284;
+		}
+
+		.state {
+			margin-right: 37px;
+			font-weight: 400;
+			font-size: 13px;
+			text-align: center;
+			color: #222232;
+			background: linear-gradient(
+					0deg,
+					rgba(4, 178, 243, 0.3),
+					rgba(4, 178, 243, 0.3)
+				),
+				#ffffff;
+			border: 2px solid #ffffff;
+			border-radius: 10px;
+			padding-top: 1px;
+			padding-bottom: 1px;
+			padding-left: 8.75px;
+			padding-right: 9.78px;
+		}
+
+		.profit {
+			margin-right: 56px;
+			font-weight: 400;
+			font-size: 15px;
+			color: #697284;
+		}
+	}
+}
