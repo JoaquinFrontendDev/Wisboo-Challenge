@@ -43,6 +43,10 @@ body {
   text-transform: uppercase;
   color: #697284;
   padding: 9px 0;
+  cursor: pointer;
+}
+.header-export-btn:active {
+  transform: scale(0.99);
 }
 .header-export-btn span {
   padding-right: 11px;
@@ -67,6 +71,10 @@ body {
   text-transform: uppercase;
   color: #ffffff;
   padding: 9px 11px;
+  cursor: pointer;
+}
+.header-register-btn:active {
+  transform: scale(0.99);
 }
 
 .header-underline {
