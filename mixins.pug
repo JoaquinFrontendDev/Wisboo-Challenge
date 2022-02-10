@@ -1,0 +1,15 @@
+mixin infoCard(title, data, footer)
+    article.info-card
+        h4.card-title= title 
+        h4.card-data= data
+        p.card-footer= footer
+
+mixin dataItem(orderNumber, courseName, clientName, date, actualState, profit, icon)
+        .data-item 
+            p.order-number= orderNumber
+            p.course-name= courseName
+            p.client-name= clientName
+            p.date= date
+            p.state= actualState
+            p.profit= profit
+            i.icon-Menu-Tres-Puntos

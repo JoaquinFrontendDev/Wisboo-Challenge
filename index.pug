@@ -1,5 +1,7 @@
 html(lang="en")
-    head
+    include mixins.pug
+    include data.pug
+    head   
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -20,22 +22,10 @@ html(lang="en")
                     button.header-register-btn Registrar una venta
             .header-underline
             .cards-container 
-                article.info-card
-                    h4.card-title Cant Ventas 
-                    h4.card-data 322
-                    p.card-footer Últimos 60 días
-                article.info-card
-                    h4.card-title Recaudo (MXN)
-                    h4.card-data $ 77322 MXN
-                    p.card-footer 04/10/2020 - 04/12/2020
-                article.info-card
-                    h4.card-title Recaudo (USD)
-                    h4.card-data $ 10420 USD
-                    p.card-footer Todos los tiempos
-                article.info-card
-                    h4.card-title Recaudo (ARS)
-                    h4.card-data $ 257000 ARS
-                    p.card-footer 04/10/2020 - 04/12/2020
+                +infoCard('Cant Ventas', '322', 'Últimos 60 días')
+                +infoCard('Recaudo (MXN)', '$ 77322 MXN', '04/10/2020 - 04/12/2020')
+                +infoCard('Recaudo (USD)', '$ 10420 USD', 'Todos los tiempos')
+                +infoCard('Recaudo (ARS)', '$ 257000 ARS', '04/10/2020 - 04/12/2020')
             .main-container 
                 .data-box 
                     .filters-wrapper
@@ -43,7 +33,6 @@ html(lang="en")
                             input.search-data(type="text", placeholder="Buscar por #orden o comprador")
                             i.icon-Buscar
                         select.filter-select
-                            i.
                             option Curso
                         select.filter-select
                             option Estado
@@ -51,92 +40,14 @@ html(lang="en")
                             option Medio de Pago
                         select.filter-select
                             option 04/10/2020
-
-                    .data-wrapper
-                        .data-item 
-                            p.order-number 10063-0021
-                            p.course-name Baby Monitor Technology
-                            p.buyer-name Aaron Almaraz
-                            p.date 19 Dec 2020
-                            p.state Comprobante
-                            p.profit USD $50
-                            i.icon-Menu-Tres-Puntos
-                    .data-wrapper
-                        .data-item 
-                            p.order-number 10063-0021
-                            p.course-name Baby Monitor Technology
-                            p.buyer-name Aaron Almaraz
-                            p.date 19 Dec 2020
-                            p.state Comprobante
-                            p.profit USD $50
-                            i.icon-Menu-Tres-Puntos
-                            
-                    .data-wrapper
-                        .data-item 
-                            p.order-number 10063-0021
-                            p.course-name Baby Monitor Technology
-                            p.buyer-name Aaron Almaraz
-                            p.date 19 Dec 2020
-                            p.state Comprobante
-                            p.profit USD $50
-                            i.icon-Menu-Tres-Puntos
-
-                    .data-wrapper
-                        .data-item 
-                            p.order-number 10063-0021
-                            p.course-name Baby Monitor Technology
-                            p.buyer-name Aaron Almaraz
-                            p.date 19 Dec 2020
-                            p.state Comprobante
-                            p.profit USD $50
-                            i.icon-Menu-Tres-Puntos
-
-                    .data-wrapper
-                        .data-item 
-                            p.order-number 10063-0021
-                            p.course-name Baby Monitor Technology
-                            p.buyer-name Aaron Almaraz
-                            p.date 19 Dec 2020
-                            p.state Comprobante
-                            p.profit USD $50
-                            i.icon-Menu-Tres-Puntos
-
-                    .data-wrapper
-                        .data-item 
-                            p.order-number 10063-0021
-                            p.course-name Baby Monitor Technology
-                            p.buyer-name Aaron Almaraz
-                            p.date 19 Dec 2020
-                            p.state Comprobante
-                            p.profit USD $50
-                            i.icon-Menu-Tres-Puntos
-
-                    .data-wrapper
-                        .data-item 
-                            p.order-number 10063-0021
-                            p.course-name Baby Monitor Technology
-                            p.buyer-name Aaron Almaraz
-                            p.date 19 Dec 2020
-                            p.state Comprobante
-                            p.profit USD $50
-                            i.icon-Menu-Tres-Puntos
-
-                    .data-wrapper
-                        .data-item 
-                            p.order-number 10063-0021
-                            p.course-name Baby Monitor Technology
-                            p.buyer-name Aaron Almaraz
-                            p.date 19 Dec 2020
-                            p.state Comprobante
-                            p.profit USD $50
-                            i.icon-Menu-Tres-Puntos
-
-                    .data-wrapper
-                        .data-item 
-                            p.order-number 10063-0021
-                            p.course-name Baby Monitor Technology
-                            p.buyer-name Aaron Almaraz
-                            p.date 19 Dec 2020
-                            p.state Comprobante
-                            p.profit USD $50
-                            i.icon-Menu-Tres-Puntos
+                    .selects-wrapper 
+                            label.label-order #Orden        
+                            label.label-course #Curso        
+                            label.label-client #Comprador        
+                            label.label-date #Fecha        
+                            label.label-state #Estado        
+                            label.label-profit #Ganancias        
+                    each item, index in data 
+                        .data-wrapper
+                            +dataItem(item.orderNumber, item.courseName, item.clientName, item.date, item.actualState, item.profit)
+                    

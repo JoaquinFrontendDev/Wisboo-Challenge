@@ -8,10 +8,6 @@
 }
 
 body {
-	width: 100%;
-	max-width: 100vw;
-	height: 100%;
-	min-height: 100vh;
 	background-color: #ccc;
 	display: grid;
 	place-items: center;
@@ -19,14 +15,13 @@ body {
 
 .container {
 	position: relative;
-	width: 1280px;
-	height: 1062px;
+	height: 100%;
+	padding-bottom: 2rem;
 	background-color: #f7f7f9;
 }
 
 .header-container {
-	width: 100%;
-	padding: 82px 140px 36px;
+	padding: 82px 140px 13px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -36,6 +31,7 @@ body {
 	font-weight: bold;
 	font-size: 22px;
 	color: #444c5e;
+	margin-right: 458px;
 }
 
 .header-export-btn {
@@ -75,12 +71,9 @@ body {
 }
 
 .header-underline {
-	position: absolute;
-	width: 999px;
 	height: 1px;
-	left: 141px;
-	top: 131px;
-	border: 1px solid #b3bac9;
+	background-color: #b3bac9;
+	margin: 0 140px;
 }
 
 .cards-container {
@@ -88,6 +81,7 @@ body {
 	padding: 22px 140px;
 	display: flex;
 	justify-content: space-between;
+	gap: 13px;
 }
 
 .info-card {
@@ -133,12 +127,37 @@ body {
 	border-radius: 8px;
 }
 
+.selects-wrapper {
+	width: 100%;
+	padding: 0px 44px;
+	font-weight: 600;
+	font-size: 13px;
+	color: #697284;
+	border-bottom: 0.7px solid #d4d8e1;
+	padding-bottom: 15px;
+
+	.label-order {
+		margin-right: 65px;
+	}
+	.label-course {
+		margin-right: 186px;
+	}
+	.label-client {
+		margin-right: 103px;
+	}
+	.label-date {
+		margin-right: 87px;
+	}
+	.label-state {
+		margin-right: 65px;
+	}
+}
+
 .filters-wrapper {
 	width: 100%;
 	display: flex;
 	gap: 13px;
 	padding: 23px 22px 33px;
-	justify-content: space-between;
 }
 
 .input-box {
@@ -180,18 +199,18 @@ body {
 
 .data-wrapper {
 	width: 100%;
-	padding: 44px 20px 40.26px;
-
 	.data-item {
 		width: 100%;
+		height: 60px;
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		padding-bottom: 18px;
+		padding: 20px 0 18px;
 		border-bottom: 0.7px solid #d4d8e1;
 
 		.order-number {
-			margin-right: 34px;
+			width: 83px;
+			margin-left: 44px;
+			margin-right: 35px;
 			font-weight: 600;
 			color: #04b2f3;
 			font-size: 15px;
@@ -199,27 +218,32 @@ body {
 		}
 
 		.course-name {
+			width: 200px;
 			margin-right: 35px;
 			font-weight: 400;
 			font-size: 15px;
 			color: #697284;
+			word-wrap: break-word;
 		}
 
-		.buyer-name {
-			margin-right: 71px;
+		.client-name {
+			width: 139px;
+			margin-right: 36px;
 			font-weight: 400;
 			font-size: 15px;
 			color: #697284;
 		}
 
 		.date {
-			margin-right: 38px;
+			width: 89px;
+			margin-right: 35px;
 			font-weight: 400;
 			font-size: 15px;
 			color: #697284;
 		}
 
 		.state {
+			width: 106px;
 			margin-right: 37px;
 			font-weight: 400;
 			font-size: 13px;
@@ -237,13 +261,40 @@ body {
 			padding-bottom: 1px;
 			padding-left: 8.75px;
 			padding-right: 9.78px;
+
+			.paid {
+				background: linear-gradient(
+						0deg,
+						rgba(23, 230, 138, 0.3),
+						rgba(23, 230, 138, 0.3)
+					),
+					#ffffff;
+			}
+
+			.rejected {
+				background: linear-gradient(
+						0deg,
+						rgba(255, 69, 92, 0.4),
+						rgba(255, 69, 92, 0.4)
+					),
+					#ffffff;
+			}
+
+			.pending {
+				background: #eceef1;
+			}
 		}
 
 		.profit {
-			margin-right: 56px;
+			width: 81px;
+			margin-right: 35px;
 			font-weight: 400;
 			font-size: 15px;
 			color: #697284;
+		}
+
+		i {
+			margin-right: 40.26px;
 		}
 	}
 }
