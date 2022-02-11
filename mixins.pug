@@ -1,7 +1,14 @@
+// MADE COUPLE OF MIXINS TO SAVE HTML CODE //
+
 mixin infoCard(title, data, footer)
     article.info-card
         h4.card-title= title 
-        h4.card-data= data
+        if data === '322'
+            .card-data= data 
+        else
+            .card-data
+                i.icon-Dollar-Sign 
+                span= data
         p.card-footer= footer
 
 mixin dataItem(orderNumber, courseName, clientName, date, actualState, profit, icon)
@@ -10,6 +17,13 @@ mixin dataItem(orderNumber, courseName, clientName, date, actualState, profit, i
             p.course-name= courseName
             p.client-name= clientName
             p.date= date
-            p.state= actualState
+            if actualState === 'Pagada'
+                p(class='state paid')= actualState
+            else if actualState === 'Rechazada'
+                p(class='state rejected')= actualState
+            else if actualState === 'Pendiente'
+                p(class='state pending')= actualState
+            else 
+                p(class='state')= actualState
             p.profit= profit
             i.icon-Menu-Tres-Puntos

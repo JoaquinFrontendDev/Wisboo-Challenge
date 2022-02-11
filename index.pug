@@ -23,10 +23,10 @@ html(lang="en")
             .header-underline
             .cards-container 
                 +infoCard('Cant Ventas', '322', 'Últimos 60 días')
-                +infoCard('Recaudo (MXN)', '$ 77322 MXN', '04/10/2020 - 04/12/2020')
-                +infoCard('Recaudo (USD)', '$ 10420 USD', 'Todos los tiempos')
-                +infoCard('Recaudo (ARS)', '$ 257000 ARS', '04/10/2020 - 04/12/2020')
-            .main-container 
+                +infoCard('Recaudo (MXN)', ' 77322 MXN', '04/10/2020 - 04/12/2020')
+                +infoCard('Recaudo (USD)', ' 10420 USD', 'Todos los tiempos')
+                +infoCard('Recaudo (ARS)', ' 257000 ARS', '04/10/2020 - 04/12/2020')
+            .data-container 
                 .data-box 
                     .filters-wrapper
                         .input-box
@@ -38,15 +38,29 @@ html(lang="en")
                             option Estado
                         select.filter-select
                             option Medio de Pago
-                        select.filter-select
-                            option 04/10/2020
+                        .filter-select
+                            span 04/10/2020
+                            div.date-border
+                            i.icon-Date
                     .selects-wrapper 
-                            label.label-order #Orden        
-                            label.label-course #Curso        
-                            label.label-client #Comprador        
-                            label.label-date #Fecha        
-                            label.label-state #Estado        
-                            label.label-profit #Ganancias        
+                        .label-order 
+                            span #Orden
+                            i.icon-filtrar        
+                        .label-course 
+                            span #Curso
+                            i.icon-filtrar           
+                        .label-client 
+                            span Comprador
+                            i.icon-filtrar          
+                        .label-date 
+                            span #Fecha
+                            i.icon-filtrar        
+                        .label-state 
+                            span #Estado
+                            i.icon-filtrar          
+                        .label-profit 
+                            span #Ganancia
+                            i.icon-filtrar            
                     each item, index in data 
                         .data-wrapper
                             +dataItem(item.orderNumber, item.courseName, item.clientName, item.date, item.actualState, item.profit)
