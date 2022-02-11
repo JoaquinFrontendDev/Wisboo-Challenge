@@ -1,6 +1,21 @@
 // MADE SOME VARIABLES WITH THE COLORS THAT ARE REPEATED THE MOST
 
+@mixin fontStyle {
+	font-weight: 400;
+	font-size: $font-md;
+	color: $text-gray;
+}
+
+@mixin flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 $text-gray: #697284;
+$font-sm: 13px;
+$font-md: 15px;
+$font-lg: 22px;
 $bg-paid: linear-gradient(
 		0deg,
 		rgba(23, 230, 138, 0.3),
@@ -52,26 +67,25 @@ body {
 	justify-content: space-between;
 	margin: auto;
 
-	@media screen and (max-width: 1100px) {
+	@media screen and (max-width: 800px) {
 		padding: 50px 60px 13px;
-		text-align: center;
 		gap: 1rem;
+		align-items: center;
+		justify-content: center;
 	}
 }
 
 .header-title {
 	font-style: normal;
 	font-weight: bold;
-	font-size: 22px;
+	font-size: $font-lg;
 	color: #444c5e;
 }
 
 .header-btns {
+	@include flexCenter;
 	min-width: 275px;
-	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
 
 	@media screen and (max-width: 1100px) {
 		gap: 1rem;
@@ -85,7 +99,7 @@ body {
 	border: 1px solid #d4d8e1;
 	border-radius: 3px;
 	font-weight: 600;
-	font-size: 13px;
+	font-size: $font-sm;
 	text-transform: uppercase;
 	color: $text-gray;
 	padding: 9px 0;
@@ -114,7 +128,7 @@ body {
 	outline: none;
 	border: none;
 	font-weight: 600;
-	font-size: 13px;
+	font-size: $font-sm;
 	margin-left: 13px;
 	text-transform: uppercase;
 	color: #ffffff;
@@ -139,11 +153,9 @@ body {
 // *************** CARDS CSS ******************//
 
 .cards-container {
+	@include flexCenter;
 	width: 100%;
 	padding: 22px 140px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	gap: 13px;
 	flex-wrap: wrap;
 
@@ -163,9 +175,7 @@ body {
 }
 
 .card-title {
-	font-weight: 400;
-	font-size: 15px;
-	color: $text-gray;
+	@include fontStyle;
 	margin-bottom: 13px;
 }
 
@@ -178,7 +188,7 @@ body {
 
 .card-footer {
 	font-weight: 600;
-	font-size: 13px;
+	font-size: $font-sm;
 	color: #9da5b7;
 }
 
@@ -205,42 +215,13 @@ body {
 	}
 }
 
-.selects-wrapper {
-	width: 100%;
-	padding: 0px 44px;
-	font-weight: 600;
-	font-size: 13px;
-	display: flex;
-	color: $text-gray;
-	border-bottom: 0.7px solid #d4d8e1;
-	padding-bottom: 15px;
-
-	.label-order {
-		margin-right: 55px;
-	}
-	.label-course {
-		margin-right: 172px;
-	}
-	.label-client {
-		margin-right: 87px;
-	}
-	.label-date {
-		margin-right: 67px;
-	}
-	.label-state {
-		margin-right: 75px;
-	}
-
-	i {
-		margin-left: 5px;
-	}
-}
-
 .filters-wrapper {
 	width: 100%;
+	margin: auto;
 	display: flex;
 	gap: 13px;
-	padding: 23px 22px 33px;
+	justify-content: space-between;
+	padding: 23px 22px;
 }
 
 .input-box {
@@ -283,6 +264,7 @@ body {
 	padding: 0 10px;
 
 	&:nth-child(5) {
+		min-width: 150px;
 		position: relative;
 		display: flex;
 		justify-content: flex-start;
@@ -298,62 +280,95 @@ body {
 		i {
 			position: absolute;
 			top: 10;
-			right: 24;
+			right: 20;
 		}
 	}
 }
 
+.selects-wrapper {
+	width: calc(100% - 44px);
+	margin: auto;
+	padding: 0px 22px;
+	font-weight: 600;
+	font-size: $font-sm;
+	display: flex;
+	color: $text-gray;
+	border-bottom: 0.7px solid #d4d8e1;
+	padding-bottom: 15px;
+	padding-top: 12px;
+
+	.label-order {
+		margin-right: 55px;
+	}
+	.label-course {
+		margin-right: 176px;
+	}
+	.label-client {
+		margin-right: 91px;
+	}
+	.label-date {
+		margin-right: 76px;
+	}
+	.label-state {
+		margin-right: 80px;
+	}
+
+	i {
+		margin-left: 5px;
+	}
+}
+
 .data-wrapper {
-	width: 100%;
+	width: calc(100% - 44px);
+	margin: auto;
+	border-bottom: 0.7px solid #d4d8e1;
+
+	&:last-child {
+		padding-bottom: 12px;
+	}
+
 	.data-item {
-		min-width: 1000px;
 		width: 100%;
+		min-width: 1000px;
 		height: 60px;
 		display: flex;
 		align-items: center;
 		padding: 20px 0 18px;
-		border-bottom: 0.7px solid #d4d8e1;
 
 		.order-number {
 			width: 84px;
-			margin-left: 42px;
+			margin-left: 21px;
 			margin-right: 35px;
 			font-weight: 600;
 			color: #04b2f3;
-			font-size: 15px;
+			font-size: $font-md;
 			text-decoration-line: underline;
 		}
 
 		.course-name {
+			@include fontStyle;
 			width: 200px;
 			margin-right: 35px;
-			font-weight: 400;
-			font-size: 15px;
-			color: $text-gray;
 			word-wrap: break-word;
 		}
 
 		.client-name {
+			@include fontStyle;
 			width: 139px;
 			margin-right: 36px;
-			font-weight: 400;
-			font-size: 15px;
-			color: $text-gray;
 		}
 
 		.date {
+			@include fontStyle;
 			width: 90px;
 			margin-right: 35px;
-			font-weight: 400;
-			font-size: 15px;
-			color: $text-gray;
 		}
 
 		.state {
 			width: 106px;
 			margin-right: 37px;
 			font-weight: 400;
-			font-size: 13px;
+			font-size: $font-sm;
 			text-align: center;
 			color: #222232;
 			background: $bg-voucher;
@@ -377,15 +392,13 @@ body {
 		}
 
 		.profit {
+			@include fontStyle;
 			width: 82px;
 			margin-right: 35px;
-			font-weight: 400;
-			font-size: 15px;
-			color: $text-gray;
 		}
 
 		i {
-			margin-right: 40.26px;
+			margin-right: 19.26px;
 		}
 	}
 }
